@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AVEN — Token | Preventa & Ecosistema</title>
+  <meta name="description" content="AVEN — Token en BNB Smart Chain. Economía, roadmap, utilidad en juego, staking, NFTs y preventa. Únete a la comunidad." />
+  <meta property="og:title" content="AVEN — Token en BNB" />
+  <meta property="og:description" content="Token AVEN: metaverso, juego, staking, gobernanza y NFTs. Preventa disponible." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Estilos: diseño limpio y responsivo -->
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1724; --accent:#00d1b2; --muted:#9aa9b8; --glass: rgba(255,255,255,0.04);
+      --max-width:1200px; --radius:14px;
+      --mono: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:var(--mono); background: linear-gradient(180deg,#06101a 0%, #081421 60%); color:#e6eef6; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale; line-height:1.45; padding-bottom:60px;
+    }
+    .container{max-width:var(--max-width); margin:0 auto; padding:28px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:48px; height:48px; border-radius:10px; background:linear-gradient(135deg,#006f5a,#00d1b2); display:flex; align-items:center; justify-content:center; font-weight:700; color:#042926}
+    nav a{color:var(--muted); text-decoration:none; margin-left:18px; font-weight:600}
+    nav a.cta{background:var(--accent); color:#042926; padding:10px 14px; border-radius:10px}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; margin-top:34px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:26px; box-shadow:0 6px 30px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03)}
+    h1{font-size:32px; margin:0 0 12px}
+    p.lead{color:var(--muted); margin:0 0 18px}
+
+    .metrics{display:flex; gap:12px; margin-top:18px}
+    .metric{background:var(--glass); padding:12px 14px; border-radius:12px; font-weight:700}
+
+    .token-card{display:flex; flex-direction:column; gap:12px}
+    .btn{display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700}
+    .btn.primary{background:var(--accent); color:#042926}
+    .btn.ghost{border:1px solid rgba(255,255,255,0.06); color:var(--muted); background:transparent}
+
+    /* Sections */
+    section{margin-top:30px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .feature{padding:18px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.02)}
+    h3{margin:0 0 10px}
+
+    /* Tokenomics */
+    .table{width:100%; border-collapse:collapse; margin-top:12px}
+    .table th, .table td{padding:12px 10px; text-align:left; border-bottom:1px solid rgba(255,255,255,0.03)}
+
+    /* Roadmap */
+    .roadmap{display:flex; flex-direction:column; gap:12px}
+    .mile{display:flex; gap:14px; align-items:flex-start}
+    .dot{width:12px; height:12px; border-radius:50%; background:var(--accent); margin-top:6px}
+
+    /* FAQ */
+    .faq-item{margin-bottom:10px}
+    .faq-q{font-weight:700}
+    .faq-a{color:var(--muted)}
+
+    footer{margin-top:36px; padding:20px 0; text-align:center; color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+    .center{display:flex; align-items:center; justify-content:center}
+    .pill{background:rgba(255,255,255,0.03); padding:8px 10px; border-radius:999px}
+
+    /* form modal simple */
+    .modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,0.6)}
+    .modal.open{display:flex}
+    .modal .modal-card{width:420px; max-width:92%; padding:20px}
+    input,select,textarea{width:100%; padding:10px; border-radius:10px; margin-top:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit}
+    .small{font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">AV</div>
+        <div>
+          <div style="font-weight:800">AVEN</div>
+          <div class="muted small">Token — BNB Smart Chain (BEP-20)</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#whitepaper">Whitepaper</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" class="cta" id="btnPresale">Comprar (Preventa)</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero">
+      <div class="card">
+        <h1>AVEN — Token del ecosistema AVEN</h1>
+        <p class="lead">Token nativo del metaverso AVEN: utilidades en juego, staking, gobernanza y NFTs. Preventa en curso — participa y obtén beneficios exclusivos.</p>
+
+        <div class="metrics">
+          <div class="metric">Precio preventa: <strong>0.02 BNB</strong></div>
+          <div class="metric">Toque Máx: <strong>1,000,000,000 AVEN</strong></div>
+          <div class="metric">Cadena: <strong>BNB Smart Chain</strong></div>
+        </div>
+
+        <div style="margin-top:18px; display:flex; gap:12px; flex-wrap:wrap">
+          <a href="#whitepaper" class="btn ghost">Whitepaper</a>
+          <a href="#tokenomics" class="btn primary">Ver Tokenomics</a>
+        </div>
+
+        <section style="margin-top:20px">
+          <h3>Utilidad</h3>
+          <div class="grid-3" style="margin-top:12px">
+            <div class="feature">
+              <h4>Juego & Economía</h4>
+              <p class="muted">Uso dentro del juego para comprar objetos, mejoras y acceso a zonas exclusivas.</p>
+            </div>
+            <div class="feature">
+              <h4>Staking & Recompensas</h4>
+              <p class="muted">Bloquea AVEN y recibe recompensas periódicas y acceso a ventas privadas.</p>
+            </div>
+            <div class="feature">
+              <h4>Gobernanza & NFTs</h4>
+              <p class="muted">Vota propuestas y utiliza AVEN para comprar NFTs con utilidad real en el metaverso.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- SIDEBAR TOKEN CARD -->
+      <aside class="token-card card">
+        <div style="display:flex; justify-content:space-between; align-items:center">
+          <div>
+            <div class="muted small">Contrato (BEP-20)</div>
+            <div style="font-weight:800; word-break:break-all">0xAvenContractAddressPlaceholder000000</div>
+          </div>
+          <div class="pill">Live: Testnet</div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div class="muted small">Saldo comunidad</div>
+          <div style="font-weight:800; font-size:18px">30% — Recompensas & staking</div>
+        </div>
+
+        <div style="margin-top:12px; display:flex; gap:8px">
+          <button class="btn primary" id="openPresale">Participar en preventa</button>
+          <a class="btn ghost" href="#contacto">Contactar</a>
+        </div>
+
+        <div style="margin-top:12px; font-size:13px; color:var(--muted)">Enlaces: <a href="#" style="color:var(--accent); text-decoration:none">Docs</a> · <a href="#" style="color:var(--accent); text-decoration:none">Comunidad</a></div>
+      </aside>
+    </main>
+
+    <!-- TOKENOMICS -->
+    <section id="tokenomics" class="card">
+      <h2>Tokenomics</h2>
+      <p class="muted">Distribución y parámetros principales del token AVEN.</p>
+
+      <table class="table" aria-hidden="false">
+        <thead>
+          <tr><th>Elemento</th><th>Porcentaje / Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Total supply</td><td>1,000,000,000 AVEN</td></tr>
+          <tr><td>Preventa</td><td>20% (200,000,000)</td></tr>
+          <tr><td>Liquidez</td><td>25% (250,000,000)</td></tr>
+          <tr><td>Comunidad & Recompensas</td><td>30% (300,000,000)</td></tr>
+          <tr><td>Equipo & Advisors (bloqueado)</td><td>10% (100,000,000) — vesting 24 meses</td></tr>
+          <tr><td>Tesorería / Ecosistema</td><td>10% (100,000,000)</td></tr>
+          <tr><td>Marketing & Asociaciones</td><td>5% (50,000,000)</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap">
+        <div class="pill">Precio preventa: 0.02 BNB</div>
+        <div class="pill">Soft cap: 150 BNB</div>
+        <div class="pill">Hard cap: 600 BNB</div>
+      </div>
+
+      <div style="margin-top:14px">
+        <h3>Notas importantes</h3>
+        <ul class="muted">
+          <li>Contrato verificado en BscScan cuando se lance la mainnet.</li>
+          <li>Transparencia: auditoría externa programada antes del listado.</li>
+          <li>Vesting para equipo y advisors para evitar dump.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" class="card">
+      <h2>Roadmap</h2>
+      <div class="roadmap">
+        <div class="mile"><div class="dot"></div><div><strong>Q4 2025</strong> — Lanzamiento de preventa & landing oficial. Auditoría de contrato. Inicio marketing.</div></div>
+        <div class="mile"><div class="dot"></div><div><strong>Q1 2026</strong> — Listado en DEX, staking v1, primeras parcel sales en metaverso.</div></div>
+        <div class="mile"><div class="dot"></div><div><strong>Q2 2026</strong> — Alpha del juego, marketplace NFTs y staking v2.</div></div>
+        <div class="mile"><div class="dot"></div><div><strong>Q3 2026</strong> — Integración con partners, listado CEX pequeño, programa de partners.</div></div>
+        <div class="mile"><div class="dot"></div><div><strong>Q4 2026+</strong> — Expansión global, features de gobernanza y economía completa del metaverso.</div></div>
+      </div>
+    </section>
+
+    <!-- WHITEPAPER & FAQ -->
+    <section id="whitepaper" class="card">
+      <h2>Whitepaper</h2>
+      <p class="muted">Resumen ejecutivo y enlaces a la documentación técnica.</p>
+      <div style="display:flex; gap:12px; margin-top:12px; flex-wrap:wrap">
+        <a class="btn primary" href="#" onclick="alert('Whitepaper: archivo de ejemplo - reemplaza por tu documento real')">Descargar Whitepaper (PDF)</a>
+        <a class="btn ghost" href="#" onclick="scrollToFAQ()">Ver FAQ</a>
+      </div>
+
+      <div style="margin-top:18px">
+        <h3>Resumen técnico (breve)</h3>
+        <p class="muted">AVEN es un token BEP-20 con funciones de staking, quema programada, y utilidades en un juego y marketplace. La economía ha sido diseñada para incentivar la retención y participación de la comunidad.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="card">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-item"><div class="faq-q">¿Dónde puedo comprar AVEN?</div><div class="faq-a">Durante la preventa en nuestro sitio o más tarde en exchanges y DEXs como PancakeSwap (cuando esté listado).</div></div>
+      <div class="faq-item"><div class="faq-q">¿Cuál es la cadena del token?</div><div class="faq-a">BNB Smart Chain (BEP-20).</div></div>
+      <div class="faq-item"><div class="faq-q">¿Habrá auditoría?</div><div class="faq-a">Sí — auditoría externa antes del listado en DEX/CEX.</div></div>
+      <div class="faq-item"><div class="faq-q">¿Cómo puedo participar en staking?</div><div class="faq-a">Lanzaremos la plataforma de staking en Q1 2026; habrá guías y panel para stakear AVEN.</div></div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <section id="contacto" class="card">
+      <h2>Equipo & Contacto</h2>
+      <p class="muted">Equipo: Equipo AVEN (fundadores y advisors). Si deseas asociarte o invertir, contáctanos.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Gracias — formulario simulado. Reemplaza con tu backend.');">
+        <input type="text" placeholder="Nombre" required />
+        <input type="email" placeholder="Correo" required />
+        <textarea placeholder="Mensaje (interés en preventa, partnership, etc)" rows="3"></textarea>
+        <div style="margin-top:10px; display:flex; gap:8px">
+          <button class="btn primary" type="submit">Enviar mensaje</button>
+          <a class="btn ghost" href="#">Únete a Telegram</a>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div class="muted">© AVEN 2025. Este sitio es una landing informativa. No es un consejo financiero.</div>
+    </footer>
+  </div>
+
+  <!-- Modal Preventa simple -->
+  <div id="modalPresale" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-card card">
+      <h3>Participar en preventa — AVEN</h3>
+      <p class="muted">Completa los datos para reservar. Este formulario es solo una simulación; integra tu pasarela de pago o smart contract para procesar fondos.</p>
+      <form onsubmit="handlePresale(event)">
+        <label class="small">Nombre</label>
+        <input id="pName" required />
+        <label class="small">Correo</label>
+        <input id="pEmail" type="email" required />
+        <label class="small">Cantidad AVEN</label>
+        <input id="pAmount" type="number" min="1" required />
+        <div style="margin-top:10px; display:flex; gap:8px">
+          <button class="btn primary" type="submit">Reservar</button>
+          <button type="button" class="btn ghost" onclick="closeModal()">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // UI interactions
+    const modal = document.getElementById('modalPresale');
+    document.getElementById('openPresale').addEventListener('click', ()=> modal.classList.add('open'));
+    document.getElementById('btnPresale').addEventListener('click', (e)=>{ e.preventDefault(); modal.classList.add('open')});
+    function closeModal(){ modal.classList.remove('open') }
+
+    function handlePresale(e){
+      e.preventDefault();
+      const name = document.getElementById('pName').value;
+      const email = document.getElementById('pEmail').value;
+      const amount = document.getElementById('pAmount').value;
+      // Simulación — AQUI debes integrar con backend / smart contract / pasarela
+      alert(`Reserva recibida:\nNombre: ${name}\nEmail: ${email}\nCantidad AVEN: ${amount}`);
+      closeModal();
+    }
+
+    function scrollToFAQ(){
+      document.getElementById('faq').scrollIntoView({behavior:'smooth'});
+    }
+
+    // Accessibility: close modal with ESC
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal() });
+  </script>
+</body>
+</html>
